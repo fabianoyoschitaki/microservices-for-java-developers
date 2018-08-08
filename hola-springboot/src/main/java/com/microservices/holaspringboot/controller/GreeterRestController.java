@@ -19,13 +19,27 @@ public class GreeterRestController {
 
 	@RequestMapping(value = "/greeting", method = RequestMethod.GET, produces = "text/plain")
 	public String greeting() {
-		String backendServiceUrl = String.format("http://%s:%d/hello?greeting={greeting}", backendServiceHost,
-				backendServicePort);
-		
-		BackendDTO response = template.getForObject(backendServiceUrl, BackendDTO.class, saying);
-		System.out.println("Sending to: " + backendServiceUrl);
-		
-		return response.getGreeting() + " at host " + response.getIp();
+		String backendServiceUrl = 
+			String.format("http://%s:%d/api/backend?greeting=%s", 
+				backendServiceHost,
+				backendServicePort, 
+				saying);
+		try {
+			System.out.println("Sending to: " + backendServiceUrl);
+			BackendDTO response = template.getForObject(backendServiceUrl, BackendDTO.class, saying);
+			
+			return response.getGreeting() + " at host " + response.getIp();
+		} catch (Exception e) {
+			return "Erro: " + e.getMessage();
+		}
+	}
+
+	public RestTemplate getTemplate() {
+		return template;
+	}
+
+	public void setTemplate(RestTemplate template) {
+		this.template = template;
 	}
 
 	public String getSaying() {
