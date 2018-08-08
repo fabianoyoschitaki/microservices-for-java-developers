@@ -1,2 +1,4 @@
 com\microservices\holaspringboot\controller\HolaRestController.class
 com\microservices\holaspringboot\HolaSpringbootApplication.class
+com\microservices\holaspringboot\controller\GreeterRestController.class
+com\microservices\holaspringboot\controller\BackendDTO.class
