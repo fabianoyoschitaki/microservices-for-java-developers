@@ -1,4 +1,4 @@
-package com.redhat.examples.holaspringboot;
+package com.microservices.holaspringboot;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
