@@ -1,0 +1,4 @@
+How to Run This Outside of Maven?
+
+mvn clean package
+java -jar target/hola-springboot-1.0.jar
