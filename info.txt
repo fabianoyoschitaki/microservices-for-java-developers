@@ -1,3 +1,7 @@
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Spring Boot
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 ===================================================
 Getting Started
 ===================================================
@@ -26,3 +30,27 @@ mvn clean install spring-boot:run -Dserver.port=9090
 Run backend project with embedded Jetty
 ===================================================
 mvn clean install jetty:run
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+The Dropwizard Stack
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Dropwizard provides some very intuitive abstractions on top of
+these powerful libraries to make it very easy to write productionready
+microservices:
+• Jetty for the servlet container
+• Jersey for the REST/JAX-RS implementation
+• Jackson for JSON serialization/deserialization
+• Hibernate Validator
+• Guava
+• Metrics
+• Logback + SLF4J
+• JDBI for dealing with databases
+
+===================================================
+Getting Started
+===================================================
+ mvn -B archetype:generate -DarchetypeGroupId=io.dropwizard.archetypes -DarchetypeArtifactId=java-simple -DarchetypeVersion=0.9.2 -DgroupId=com.redhat.examples.dropwizard -DartifactId=hola-dropwizard -Dversion=1.0 -Dname=HolaDropwizard
+ 
+ Enter the directory created and run mvn clean install
