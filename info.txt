@@ -54,3 +54,33 @@ Getting Started
  mvn -B archetype:generate -DarchetypeGroupId=io.dropwizard.archetypes -DarchetypeArtifactId=java-simple -DarchetypeVersion=0.9.2 -DgroupId=com.redhat.examples.dropwizard -DartifactId=hola-dropwizard -Dversion=1.0 -Dname=HolaDropwizard
  
  Enter the directory created and run mvn clean install
+ 
+===================================================
+Running Dropwizard like Spring Boot
+===================================================
+One plug-in we do want to add is the exec-maven-plugin. With
+Spring Boot we were able to just run our microservice with mvn
+spring-boot:run. We want to be able to do the same thing with our
+Dropwizard application, so let’s add the following plug-in within the
+<build> section of the pom.xml
+
+<plugin>
+	<groupId>org.codehaus.mojo</groupId>
+	<artifactId>exec-maven-plugin</artifactId>
+	<configuration>
+		<mainClass>
+		com.redhat.examples.dropwizard.HolaDropwizardApplication
+		</mainClass>
+		<arguments>
+			<argument>server</argument>
+		</arguments>
+	</configuration>
+</plugin>
+
+Now we can execute our application from the command line like
+this:
+$ mvn exec:java
+
+App: http://localhost:8080
+Adm: http://localhost:8081
+

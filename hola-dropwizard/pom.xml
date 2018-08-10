@@ -120,6 +120,18 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>
+					com.redhat.examples.dropwizard.HolaDropwizardApplication
+					</mainClass>
+					<arguments>
+						<argument>server</argument>
+					</arguments>
+				</configuration>
+			</plugin>
         </plugins>
     </build>
 
