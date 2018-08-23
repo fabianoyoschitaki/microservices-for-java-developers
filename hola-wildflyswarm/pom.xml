@@ -180,13 +180,13 @@
 				<artifactId>fabric8-maven-plugin</artifactId>
 				<version>2.2.100</version>
 				<executions>
-					<execution>
+					<!-- execution>
 						<id>json</id>
 						<phase>generate-resources</phase>
 						<goals>
 							<goal>json</goal>
 						</goals>
-					</execution>
+					</execution -->
 					<execution>
 						<id>attach</id>
 						<phase>package</phase>
