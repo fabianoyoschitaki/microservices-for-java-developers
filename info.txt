@@ -146,3 +146,144 @@ Browser -------->  Dropwizard    --------> Backend
 
 		
 mvn clean install exec:java -Ddw.server.applicationConnectors[0].port=9090
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+WildFly Swarm
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+You can start out with a blank Java Maven or Gradle project and manually
+add dependencies and Maven plug-ins.
+
+Another option is to use the WildFly Swarm Generator web console to bootstrap your project
+(similar to Spring Initializr for Spring Boot). Lastly, you can use the
+JBoss Forge tool, which is a generic Java project creation and altering
+tool which makes it easy to add Java classes, dependencies, and
+entire classes of functionality (e.g., JPA and transactions) to a Java
+Maven project. We highly recommend JBoss Forge in general, and
+we will use it in the guide here.
+
+===================================================
+Using JBoss Forge
+===================================================
+
+http://forge.jboss.org/document/jboss-forge-2,-java-ee-easily,-so-easily
+http://downloads.jboss.org/forge/releases/3.9.1.Final/forge-distribution-3.9.1.Final-offline.zip 
+
+Download http://forge.jboss.org/download and Then add $FORGE_HOME/bin to your PATH variable, then execute
+Once you have Forge installed, you should be able to start up the
+CLI (all of these commands available in the IDE plug-in as well):
+
+$ forge
+$ addon-install --coordinate org.jboss.forge.addon:wildfly-swarm,1.0.0.Beta2
+
+You should see:
+***SUCCESS*** Addon org.jboss.forge.addon:wildfly-swarm,
+1.0.0.Beta2 was installed successfully.
+
+Let’s try a project-new command to build a new Java EE project
+that will be built and packaged with WildFly Swarm. Follow the
+interactive command prompt with the following inputs:
+
+[swarm]$ project-new
+***INFO*** Required inputs not satisfied, interactive mode
+* Project name: hola-wildflyswarm
+? Package [org.hola.wildflyswarm]: com.redhat.examples.wfswarm
+? Version [1.0.0-SNAPSHOT]: 1.0
+? Final name: hola-wildflyswarm
+? Project location [/Users/ceposta/temp/swarm]:
+[0] (x) war
+[1] ( ) jar
+[2] ( ) parent
+[3] ( ) forge-addon
+[4] ( ) resource-jar
+[5] ( ) ear
+[6] ( ) from-archetype
+[7] ( ) generic
+
+Press <ENTER> to confirm, or <CTRL>+C to cancel.
+* Project type: [0-7]
+[0] (x) Maven
+Press <ENTER> to confirm, or <CTRL>+C to cancel.
+* Build system: [0]
+[0] ( ) JAVA_EE_7
+[1] ( ) JAVA_EE_6
+[2] ( ) NONE
+Press <ENTER> to confirm, or <CTRL>+C to cancel.
+? Stack (The technology stack to be used in project): [0-2] 2
+***SUCCESS*** Project named 'hola-wildflyswarm'
+has been created.
+
+So what we have right now is an empty Java project that doesn’t do
+too much. That’s OK, though; we’re just getting started. Let’s set it up
+for a JAX-RS application:
+[hola-wildflyswarm]$ rest-setup --application-path=/
+***SUCCESS*** JAX-RS has been installed.
+
+Now, let’s add in the WildFly Swarm configurations like the Maven
+plug-in and the BOM dependency management section:
+
+[hola-wildflyswarm]$ wildfly-swarm-setup --context-path=/
+***SUCCESS*** Wildfly Swarm is now set up! Enjoy!
+
+That’s it! Now let’s build and try to run our new WildFly Swarm
+microservice:
+[HelloResource.java]$ cd ~~
+[hola-wildflyswarm]$ wildfly-swarm-run
+
+You should see it successfully start, but it doesn’t do anything or
+expose any REST services. But what did JBoss Forge create for us
+here? If you look at the directory structure, you should see something
+similar:
+./pom.xml
+./src
+./src/main
+./src/main/java
+./src/main/java/com/redhat/examples/wfswarm/rest/RestApplication.java
+./src/main/resources
+./src/main/webapp
+./src/test
+./src/test/java
+./src/test/resources
+
+===================================================
+Hello World
+===================================================
+
+run $ rest-new-endpoint in the project folder.
+
+[hola-wildflyswarm]$ rest-new-endpoint
+***INFO*** Required inputs not satisfied, interactive mode
+? Package Name (The package name where type will be created) \
+[com.redhat.examples.wfswarm.rest]:
+* Type Name (The type name): HolaResource
+[0] (x) GET
+[1] ( ) POST
+[2] ( ) PUT
+[3] ( ) DELETE
+
+Press <ENTER> to confirm, or <CTRL>+C to cancel.
+? Methods (REST methods to be defined): [0-3]
+? Path (The root path of the endpoint): api/hola
+***SUCCESS***
+REST com.redhat.examples.wfswarm.rest.HolaResource created
+That’s it! Forge has created the ./src/main/java/com/redhat/examples/
+wfswarm/rest/HolaResource.java JAX-RS resource for us
+
+[HelloResource.java]$ cd ~~
+[hola-wildflyswarm]$ wildfly-swarm-run
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
