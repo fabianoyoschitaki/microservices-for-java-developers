@@ -272,6 +272,10 @@ wfswarm/rest/HolaResource.java JAX-RS resource for us
 [HelloResource.java]$ cd ~~
 [hola-wildflyswarm]$ wildfly-swarm-run
 
+And navigate in a web browser to http://localhost:8080/api/hola (if
+an endpoint is not correctly displayed at this endpoint, please go
+back and check the preceding steps):
+
 
 
 
