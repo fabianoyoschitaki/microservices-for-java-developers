@@ -84,3 +84,65 @@ $ mvn exec:java
 App: http://localhost:8080
 Adm: http://localhost:8081
 
+To run: mvn clean package exec:java
+
+When we go to the endpoint at http://localhost:8080/api/hola we should see the result.
+
+===================================================
+Externalize Configuration
+===================================================
+With Dropwizard, we only have the YAML option.
+
+let’s create a file in the root of our project called conf/application.
+yml (note, you’ll need to create the conf directory if it doesn’t
+exist)
+
+# configurations for our sayingFactory
+helloapp:
+	saying: Hola Dropwizard de
+
+What if we wanted to be able to override it based on some environment conditions?
+We could override it by passing in a Java system variable like
+this -Ddw.helloapp.saying=Guten Tag. Note that the dw.* part of
+the system property name is significant; it tells Dropwizard to apply
+the value to one of the configuration settings of our application.
+
+What if we wanted to override the property based on the value of an
+OS environment variable? That would look like Example 3-8.
+Example 3-8. conf/application.yml
+
+# configurations for our sayingFactory
+helloapp:
+	saying:${HELLOAPP_SAYING:-Guten Tag aus}
+	
+Let’s run our application. To do this, let’s update our pom.xml to pass
+our new conf/application.yml file
+
+<mainClass>
+	com.redhat.examples.dropwizard.HolaDropwizardApplication
+</mainClass>
+<arguments>
+	<argument>server</argument>
+	<argument>conf/application.yml</argument>
+</arguments>
+
+export HELLOAPP_SAYING='Hello Dropwizard from'
+
+===================================================
+How to Run This Outside of Maven?
+===================================================
+Dropwizard packages our microservice as a single executable uber
+JAR. All we have to do is build our application and run it like this:
+$ mvn clean package
+$ java -jar target/hola-dropwizard-1.0.jar server conf/application.yml
+
+===================================================
+Calling Another Service
+===================================================
+
+				  (/api/greeting)         (/api/backend)
+Browser -------->  Dropwizard    --------> Backend
+        <--------  Microservice  <--------
+
+		
+mvn clean install exec:java -Ddw.server.applicationConnectors[0].port=9090
