@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.com.portoseguro</groupId>
+	<artifactId>crypter</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>crypter</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.4.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- If we want to put this microservice into production, how will we monitor it? 
+		How can we get any insight about how things are running? 
+		Often our microservices are black boxes unless we explicitly
+		think through how we want to expose metrics to the outside world.
+		Spring Boot comes with a prepackaged starter called actuator that
+		makes doing this a breeze 
+		
+		• http://localhost:8080/actuator/
+		• http://localhost:8080/actuator/beans
+		• http://localhost:8080/actuator/env
+		• http://localhost:8080/actuator/health
+		• http://localhost:8080/actuator/metrics
+		• http://localhost:8080/actuator/trace
+		• http://localhost:8080/actuator/mappings
+		
+		As of Spring Boot 2.0.0.RELEASE the default prefix for all endpoints is /actuator So if you want to check the health of an application, you should go to /actuator/health
+		To make an actuator endpoint available via HTTP, it needs to be both enabled and exposed.
+		By default:
+		only the /health and /info endpoints are exposed.
+		all endpoints but /shutdown are enabled (only /health and /info are exposed)
+		To expose all endpoints you have to add the following line into application.properties:
+		management.endpoints.web.exposure.include=*
+		-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20180813</version>
+		</dependency>
+				
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
