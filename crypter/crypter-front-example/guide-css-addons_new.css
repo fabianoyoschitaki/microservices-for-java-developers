@@ -1,0 +1,1155 @@
+
+	
+			
+			*[]{
+			}
+			
+			body, html {
+				height:auto!important;
+			}
+
+			.giw-file p {
+				 margin:0px!important;
+			}
+			
+			.jcarousel-wrapper {
+				margin: 10px 0px;
+			}
+			
+			/* .jcarousel-wrapper * {
+				float:left;
+			} */
+			
+			.jcarousel-control {
+				height: 100%;
+				width: 35px;
+				float:left;
+			}
+			
+			.jcarousel-control img{
+				height: 150px;
+				margin-top: 35px;
+				display: inline-block;
+                                outline: none;
+			}
+			
+			.jcarousel-control-prev, .jcarousel-control-next {
+				position: relative!important;
+				margin-top: 0px!important;
+				top: 0%!important;
+			}
+			.jcarousel {
+				margin: 0px!important;
+				display: inline-block;
+				float:left;
+				height: 100%;
+				width: calc(100% - 70px);
+				overflow: hidden;
+			}
+			
+			.jcarousel ul {
+				width: 4000px;
+				list-style: none;
+			}
+			
+			.jcarousel ul li {
+				list-style: none;
+				height: 100%;
+				border:0;
+			}
+			
+			.jcarousel-wrapper .infos {
+				margin-top: -15px;
+			}
+			
+			.jcarousel-wrapper .jqplot-target {
+				margin: 0 auto!important;
+			}
+			
+			.giw-cards .mainTitle {
+				color:#00adef;
+				display:block;
+				margin-bottom:10px;
+			}
+
+			.giw-cards .cardTag {
+				font-weight:bold;
+				text-decoration:none;
+			}
+			
+			.giw-cards .cardIcon {
+				height:100%;
+				float:left;
+				display:block;
+				color:#00adef;
+			}
+			
+			
+			.giw-cards .cardTitle {
+				max-width: calc(100% - 41px);
+				float:left; 
+				display:block; 
+				margin:10px 0px 0px 5px;
+			}	
+			
+			.giw-cards .cardTag.cardSelected .cardIcon, .giw-cards .cardTag.cardSelected .cardTitle {
+				   color:#004e70;
+			}
+			
+			
+			/* Régua - Rule */
+			.lineWrapper {
+				height: 50px;
+				position: relative;
+				width: 80%;
+				float: left;
+			}
+			
+			.cursorWrapper {
+			    height: 50px;
+				width: 100%;
+				display: block;
+			}
+			
+			.cursor {
+				height: 25px;
+				border: 1px solid #00b0f0;
+				width: 0px;
+				float: left;
+			}
+			
+			.cursorVal {
+				height: 25px;
+				float: left;
+				margin-left: -9px;
+				font-weight: bold;
+				margin-top: 25px;
+			}
+			
+			.rule {
+				border: 1px solid #00b0f0;
+				position: absolute;
+				width: 100%;
+				top: 25%;
+			}
+			
+			.value {
+				float: left;
+				width: 10%;
+				text-align: center;
+				font-weight: bold;
+			}
+
+             /* Timeline */
+			.giw-timeline.ps-wizard {
+				border-bottom:0px;
+			}
+			
+			.giw-timeline a:after {
+				display:none!important;
+			}
+			
+			.giw-timeline .contentHolder {
+				position:relative;
+				display:block;
+			}
+			
+			.giw-timeline .contentHolder::before {
+				content: '';
+				position: absolute;
+				top: 1.2em;
+				left: -2.3em;
+				width: 100px;
+				height: 2px;
+				background: #cacaca;
+				z-index: -1;
+			}
+			
+			.giw-timeline .ps-wizard-step:first-child .contentHolder::before {
+				display: none;
+			}
+			
+			.giw-timeline .ps-ico::before {
+				color: #cacaca!important;
+			}
+			
+			.giw-timeline .iconHolder {
+				padding: 8px 9px 10px 9px;
+				border: 2px solid #cacaca;
+				border-radius: 30px;
+				background: #fff;
+			}
+			
+			.giw-timeline .textHolder {
+				font-size: 13px;
+				display: block;
+				margin-top: 18px;
+				line-height: 16px;
+				text-transform: uppercase;
+				color: #cacaca;
+			}
+			
+			.giw-timeline .ps-wizard-step-selected .contentHolder::before {
+				background-color: #55ab67;
+			}
+			
+			.giw-timeline .ps-wizard-step-selected .iconHolder {
+				background-color: #55ab67;
+				border: 2px solid #55ab67;
+			}
+			
+			.giw-timeline .ps-wizard-step-selected .textHolder {
+				color: #55ab67;
+			}
+			
+			.giw-timeline .ps-wizard-step-selected .ps-ico:before {
+				color: #fff!important;
+			}
+			
+			/* Custom Charts - Donut */
+			
+			.giw-customchart {
+			  float: left;
+			  background: #fff;
+			  padding: 20px;
+			  margin: 0 20px 0 0;
+			}
+
+			.giw-customchart .donut-chart {
+			  position: relative;
+			  border-radius: 50%;
+			  overflow: hidden;
+			}
+			 .giw-customchart .donut-chart  .slice {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			 }
+
+			 .giw-customchart .donut-chart .chart-center {
+				position: absolute;
+				border-radius: 50%;
+			 }
+			  
+			.giw-customchart .donut-chart .chart-center	span {
+			  display: block;
+			  text-align: center;
+color:#272727;
+			}
+			 
+			.giw-customchart .donut-chart .chart-center span.p0::after {
+				content: "0%";
+			color: attr(data-after-color);
+
+			}
+			.giw-customchart .donut-chart .chart-center span.p1::after {
+				content: "1%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p2::after {
+				content: "2%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p3::after {
+				content: "3%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p4::after {
+				content: "4%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p5::after {
+				content: "5%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p6::after {
+				content: "6%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p7::after {
+				content: "7%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p8::after {
+				content: "8%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p9::after {
+				content: "9%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p10::after {
+				content: "10%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p11::after {
+				content: "11%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p12::after {
+				content: "12%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p13::after {
+				content: "13%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p14::after {
+				content: "14%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p15::after {
+				content: "15%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p16::after {
+				content: "16%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p17::after {
+				content: "17%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p18::after {
+				content: "18%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p19::after {
+				content: "19%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p20::after {
+				content: "20%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p21::after {
+				content: "21%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p22::after {
+				content: "22%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p23::after {
+				content: "23%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p24::after {
+				content: "24%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p25::after {
+				content: "25%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p26::after {
+				content: "26%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p27::after {
+				content: "27%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p28::after {
+				content: "28%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p29::after {
+				content: "29%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p30::after {
+				content: "30%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p31::after {
+				content: "31%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p32::after {
+				content: "32%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p33::after {
+				content: "33%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p34::after {
+				content: "34%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p35::after {
+				content: "35%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p36::after {
+				content: "36%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p37::after {
+				content: "37%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p38::after {
+				content: "38%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p39::after {
+				content: "39%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p40::after {
+				content: "40%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p41::after {
+				content: "41%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p42::after {
+				content: "42%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p43::after {
+				content: "43%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p44::after {
+				content: "44%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p45::after {
+				content: "45%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p46::after {
+				content: "46%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p47::after {
+				content: "47%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p48::after {
+				content: "48%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p49::after {
+				content: "49%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p50::after {
+				content: "50%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p51::after {
+				content: "51%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p52::after {
+				content: "52%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p53::after {
+				content: "53%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p54::after {
+				content: "54%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p55::after {
+				content: "55%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p56::after {
+				content: "56%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p57::after {
+				content: "57%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p58::after {
+				content: "58%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p59::after {
+				content: "59%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p60::after {
+				content: "60%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p61::after {
+				content: "61%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p62::after {
+				content: "62%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p63::after {
+				content: "63%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p64::after {
+				content: "64%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p65::after {
+				content: "65%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p66::after {
+				content: "66%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p67::after {
+				content: "67%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p68::after {
+				content: "68%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p69::after {
+				content: "69%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p70::after {
+				content: "70%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p71::after {
+				content: "71%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p72::after {
+				content: "72%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p73::after {
+				content: "73%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p74::after {
+				content: "74%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p75::after {
+				content: "75%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p76::after {
+				content: "76%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p77::after {
+				content: "77%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p78::after {
+				content: "78%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p79::after {
+				content: "79%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p80::after {
+				content: "80%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p81::after {
+				content: "81%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p82::after {
+				content: "82%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p83::after {
+				content: "83%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p84::after {
+				content: "84%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p85::after {
+				content: "85%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p86::after {
+				content: "86%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p87::after {
+				content: "87%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p88::after {
+				content: "88%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p89::after {
+				content: "89%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p90::after {
+				content: "90%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p91::after {
+				content: "91%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p92::after {
+				content: "92%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p93::after {
+				content: "93%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p94::after {
+				content: "94%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p95::after {
+				content: "95%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p96::after {
+				content: "96%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p97::after {
+				content: "97%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p98::after {
+				content: "98%";
+			color: attr(data-after-color);
+
+			}
+
+			.giw-customchart .donut-chart .chart-center span.p99::after {
+				content: "99%";
+			color: attr(data-after-color);
+
+			}
+			
+			.giw-customchart .donut-chart .chart-center span.p100::after {
+				content: "100%";
+			color: attr(data-after-color);
+
+			}
+			
+			.giw-customchart .donut-chart .chart-center span.pcustom::after {
+				content: attr(data-after-content);
+				color: attr(data-after-color);
+			}
+
+			.giw-meter { 
+				height: 8px;  /* Can be anything */
+                                margin-top:4px;
+				position: relative;
+				background: #fff;
+				-moz-border-radius: 25px;
+				-webkit-border-radius: 25px;
+				border-radius: 25px;
+			}
+
+			.giw-meter > span {
+			  display: block;
+			  height: 100%;
+			  border-top-right-radius: 8px;
+			  border-bottom-right-radius: 8px;
+			  border-top-left-radius: 20px;
+			  border-bottom-left-radius: 20px;
+			  position: relative;
+			  overflow: hidden;
+			}
+
+			.giw-meter.green > span {
+				 background-color: rgb(43,194,83);
+			}
+			
+			
+			.giw-meter.red > span {
+			  background-color: #ff0000;
+			}
+			
+         .ps-tabs { 
+            z-index:8!important;
+         }
+         .ui-datepicker table {
+            padding:0px!important;   
+        }
+        .ui-datepicker-calendar .ui-state-active {
+				background: #30C5FF!important;
+				color: #fff!important;
+			}
+
+ .ui-datepicker .ui-datepicker-header {
+             height: 115px!important;
+         }
+          
+          .ui-datepicker table {
+              height:185px!important
+          }
+          
+          .ui-datepicker .ui-datepicker-header::before {
+              height:40px!important;
+          }
+          
+          @media screen and (min-width: 768px) {
+            .ui-datepicker {
+                  height:330px!important;
+            }
+          }
+
+.childArrow {
+            margin-left:5px;
+            margin-top: -5px;
+         }
+ /*Combo Autocomplete*/
+         .giw-autocompipt {
+				padding-left: 0px;
+			}
+			.giw-autocomprelative {
+				position:relative;
+			}
+			.giw-autocompwp {
+				box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
+				padding: 5px;
+				max-height:225px;
+				position:absolute;
+				width:96%;
+				background: #fff;
+			}
+			.giw-autocompwp ul {
+				list-style:none;
+				max-height: 215px;
+				display: block;
+				overflow: auto;
+			}
+			.giw-autocompwp ul li{
+				cursor:pointer;
+			}
+			.giw-autocompwp ul li:hover{
+				font-weight:bold;
+				background-color:#f7f7f7;
+			}
+			/* Server Side Pagination */
+				.tbserver-bottom {
+					background: #D2D2D2;
+					height: 41px;
+					line-height: 41px;
+				}
+				
+				.tbserver-info {
+					float: left;
+					font-size: 11px;	
+					line-height: 41px;
+					padding-left: 12px;
+				}
+				
+				.tbserver-paginationholder {
+					float:right;
+				}
+				
+				.tbserver-paginationbtn {
+					padding: 8.5px 14px;
+					border-radius: 3px;
+					-webkit-border-radius: 3px;
+					cursor: pointer;
+					font-family: 'Open Sans',Sans-serif;
+					font-weight: 600;
+					text-align: center;
+					font-size: 11px;
+					line-height: 21px;
+					letter-spacing: 1.5px;
+					-webkit-appearance: none;
+					text-transform: uppercase;
+					text-decoration: none;
+					color: #000;
+					margin-right:3px;
+				}
+				
+				.tbserver-paginationbtn:not(.tbserver-disabledbtn):hover {
+					background: #fff;
+					border-color: #fff;
+					color: #33BFFF;
+					padding: 8.5px 14px;
+					border-radius: 3px;
+					-webkit-border-radius: 3px;
+				}
+				
+				.tbserver-paginationbtn:not(.tbserver-disabledbtn):not(.tbserver-currentpage)::selection {
+					background:none;
+					color: #000;
+				}
+				
+				.tbserver-pagebtn.tbserver-currentpage {
+					background: #fff;
+					border-color: #fff;
+					color: #33BFFF;
+					margin-left: -2px;
+					padding: 8.5px 14px;
+					border-radius: 3px;
+					-webkit-border-radius: 3px;
+				}
+				
+				.tbserver-disabledbtn, .tbserver-disabledbtn:hover {
+					color:gray;
+					cursor: default;
+				}
+				
+				.tbserver-currentpage::selection {
+					background:none;
+					color: #33BFFF;
+				}
+				
+				.tbserver-disabledbtn::selection {
+					background:none;
+					color: gray;
+				}
+				
+				.tbserver-loadingholder {
+					background: #000;
+					opacity: 0.85;
+					position:absolute;
+					top:0;
+					left:0;
+					width:100%;
+					height:100%;
+				}
+				
+				.tbserver-loading {
+					position:absolute;
+					top:calc(50% - 72px);
+					left:calc(50% - 72px);
+				}
+			
+			/* Fim Server Side Pagination */
+			
+.giw-counterfield-minus, .giw-counterfield-plus {
+				float:left;
+				cursor:pointer;
+				display: block;
+				height: 36px;
+				width: 36px;
+				background-color: #3DACFF;
+				border-radius: 20px;
+				color: #fff;
+				text-align: center;
+			}
+			
+			.giw-counterfield-minus::selection, .giw-counterfield-plus::selection {
+				background: none;
+			}
+			
+			.giw-counterfield-minus {
+				line-height: 26px;
+				font-size: 45px;
+			}
+			
+			.giw-counterfield-plus {
+				line-height: 35px;
+				font-size: 35px;
+			}
+			
+			.giw-counterfield .giw-counterfield-span {
+				width: calc(100% - 78px);
+				display: block;
+				text-align: center;
+				float: left;
+				font-size: 1.3em;
+				border-bottom: 1px solid #9a9a9a;
+				height: 36px;
+				line-height: 36px;
+				margin: 0 3px;
+			}
+
+			/* .graphTable {
+				opacity: 0;
+			}
+			
+			.graph-table .giw2tablewraper{
+				min-width:200px!important;
+			}
+			
+			.graphAccordion > .first {
+				padding-bottom: 21px!important;
+				margin-top:-30px!important;
+				border-bottom: 0 !important;
+			}
+			
+			.graphAccordion > .first div {
+				float:right!important;
+			}
+			
+			.graph-table {
+				clear: both;
+			}
+
+			.graph-table h3 {
+				display: none;
+			}
+			.wraperGraphTable.Pie .jqplot-data-label {
+				color: white;
+			}
+
+			.wraperGraphTable.Pie .jqplot-target{
+				position: relative; 
+				margin: 0 auto!important;
+			}
+
+			.wraperGraphTable .jqplot-table-legend{
+				max-width:20% !important;
+			}
+
+			.wraperGraphTable .jqplot-table-legend-swatch{
+				width: 10px;
+				height: 10px;	
+				padding: 1px;
+			}
+
+			.wraperGraphTable.Line .jqplot-target{
+				width: 90%;
+				margin: 0 auto;
+			}
+
+			.wraperGraphTable.Bar .jqplot-target{
+				width: 90%;
+				margin: 0 auto;
+			}
+
+			.wraperGraphTable.Gauge .jqplot-target{
+				margin: 0 auto;
+			}
+
+			.wraperGraphTable.Line .jqplot-axis.jqplot-yaxis{
+				left:-10px!important;
+			}
+			.wraperGraphTable.Line .jqplot-yaxis-label{
+				left:-20px!important;
+			}
+
+			.wraperGraphTable.Line .jqplot-axis.jqplot-xaxis{
+				bottom:-5px!important;
+			}
+
+			.jqplot-highlighter-tooltip {
+				background: #fff;
+				padding: 2px;
+				border: #aaa 1px solid;
+				box-shadow: 3px 2px 3px #888888;
+			}
+			 
+			.wraperGraphTable.Line{
+				float: left;
+				width: 100%;
+			} */
+		
+	

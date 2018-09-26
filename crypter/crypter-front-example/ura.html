@@ -1,0 +1,86 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Simulação URA</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="floating-labels.css" rel="stylesheet"/>
+	
+	<!-- JQuery -->
+    <script src="jquery-3.3.1.min.js"></script>
+	<style>
+		.form-signin {
+			max-width: 800px;
+		}
+	</style>
+  </head>
+	
+  <body>
+    <form class="form-signin">
+      <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">Simulação URA</h1>
+        <p>Informe Placa, CPF e Telefone</p>
+      </div>
+
+	  <div class="form-label-group">
+        <input type="number" value="1" min="1" max="99999999999" id="inputSucursal" class="form-control" placeholder="Sucursal" required autofocus />
+        <label for="inputCPF">Sucursal</label>
+      </div>
+	  
+      <div class="form-label-group">
+        <input type="text" value="139267707" min="1" max="99999999999" id="inputApolice" class="form-control" placeholder="Apólice" required />
+        <label for="inputPlaca">Apólice</label>
+      </div>
+	  
+	  <div class="form-label-group">
+        <input type="number" value="19" min="1" max="99999999999" id="inputVeiculo" class="form-control" placeholder="Item" required />
+        <label for="inputVeiculo">Item</label>
+      </div>
+	  	  
+	  <div class="form-label-group">
+        <input type="number" value="1195910435" min="1" max="99999999999" id="inputTelefone" class="form-control" placeholder="Telefone" required />
+        <label for="inputTelefone">Telefone</label>
+      </div>
+
+      <button id="btn" class="btn btn-lg btn-primary btn-block">Enviar Link</button>
+	  
+	  <div style="display: none; margin-top: 40px;" id="sms" class="text-center">
+		<p class="h4 font-weight-normal">SMS: Boa tarde, Fulano! Por favor acesse o link abaixo:</p>
+		<a id="link_value" target="_blank"/>
+	  </div>
+	 </form>
+	 
+  </body>
+  <script>
+	$(function() {
+		$("#btn").click(function(){						
+			$.ajax({
+				url: "http://172.19.14.147:8080/api/shortener/create",
+				contentType: 'application/json',
+				data: '{"sucursal":"' + $("#inputSucursal").val() + '", "apolice":"' + $("#inputApolice").val() + '", "selVeiculo":' + $("#inputVeiculo").val() + ', "buscaPoc2" : "1"}',
+				dataType: 'json',
+				success: function(data){
+					console.log("data");
+					$("#sms").toggle();
+					$("#link_value").prop("href", "http://aplwebhml/gerenciadorinterfaceweb/prtCliExtratoAgendamentoServico.do?token=" + data.token).prop("text", "http://aplwebhml/gerenciadorinterfaceweb/prtCliExtratoAgendamentoServico.do?token=" + data.token);
+				},
+				error: function(){
+					console.log("Device control failed");
+				},
+				processData: false,
+				type: 'POST'
+			});
+			
+			event.preventDefault();
+		});
+    });
+  </script>
+</html>
