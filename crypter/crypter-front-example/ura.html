@@ -18,16 +18,23 @@
     <script src="jquery-3.3.1.min.js"></script>
 	<style>
 		.form-signin {
-			max-width: 800px;
+			max-width:500px;
+		}
+		
+		body {
+			padding: 0px;
 		}
 	</style>
   </head>
 	
   <body>
     <form class="form-signin">
+	   <div class="text-center mb-4">
+        <img class="logo" src="porto.png" height="120px" />
+      </div>
       <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Simulação URA</h1>
-        <p>Informe Placa, CPF e Telefone</p>
+        <p>Informe Dados da Apólice e Telefone para receber o SMS</p>
       </div>
 
 	  <div class="form-label-group">
@@ -53,7 +60,7 @@
       <button id="btn" class="btn btn-lg btn-primary btn-block">Enviar Link</button>
 	  
 	  <div style="display: none; margin-top: 40px;" id="sms" class="text-center">
-		<p class="h4 font-weight-normal">SMS: Boa tarde, Fulano! Por favor acesse o link abaixo:</p>
+		<p class="h5 font-weight-normal" style="margin-top: 10px;">SMS: Boa tarde, Fulano! Por favor acesse o link abaixo:</p>
 		<a id="link_value" target="_blank"/>
 	  </div>
 	 </form>
@@ -69,7 +76,8 @@
 				dataType: 'json',
 				success: function(data){
 					console.log("data");
-					$("#sms").toggle();
+					$("#sms").prop("style", "display: block;");
+					$("#btn").text("Link Enviado!");
 					$("#link_value").prop("href", "http://aplwebhml/gerenciadorinterfaceweb/prtCliExtratoAgendamentoServico.do?token=" + data.token).prop("text", "http://aplwebhml/gerenciadorinterfaceweb/prtCliExtratoAgendamentoServico.do?token=" + data.token);
 				},
 				error: function(){
