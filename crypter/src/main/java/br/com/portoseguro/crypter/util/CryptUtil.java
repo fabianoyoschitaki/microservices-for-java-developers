@@ -1,4 +1,4 @@
-package br.com.portoseguro.crypter.controller;
+package br.com.portoseguro.crypter.util;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;

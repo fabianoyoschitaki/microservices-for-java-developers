@@ -1,6 +1,7 @@
 package br.com.portoseguro.crypter.controller;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.json.JSONException;
@@ -13,16 +14,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.portoseguro.crypter.util.CryptUtil;
+import br.com.portoseguro.crypter.util.RandomString;
 
 @RestController
-@RequestMapping("/api/crypter")
-@ConfigurationProperties(prefix="token")
+@RequestMapping("/api/shortener")
+@ConfigurationProperties(prefix="shortener")
 
-public class TokenController {
+public class ShortenerController {
+	
+	static Map<String, String> MAP_SHORTENED_TOKEN = new HashMap<String, String>();
 	
 	@RequestMapping(
 		method=RequestMethod.POST, 
-		value="/encrypt", 
+		value="/create", 
 		consumes = "application/json", 
 		produces="application/json")
 	public @ResponseBody String	encrypt(@RequestBody Map<String, Object> validationData) throws JSONException {
@@ -39,7 +43,15 @@ public class TokenController {
 					data.put(key, validationData.get(key));
 				}
 				body.put("data", data);
-				json.put("token", CryptUtil.encrypt(body.toString()));
+				
+				String randomString = null;
+				do {
+					randomString = RandomString.randomString(8);
+				} while (MAP_SHORTENED_TOKEN.containsKey(randomString));
+				
+				MAP_SHORTENED_TOKEN.put(randomString, CryptUtil.encrypt(body.toString()));
+				
+				json.put("token", randomString);
 			} else {
 				json.put("error", "empty data!");
 			}
@@ -51,7 +63,7 @@ public class TokenController {
 	
 	@RequestMapping(
 		method=RequestMethod.POST, 
-		value="/decrypt", 
+		value="/get", 
 		consumes = "application/json", 
 		produces="application/json")
 	public @ResponseBody String	decrypt(@RequestBody Map<String, Object> tokenInput) throws JSONException {
@@ -61,8 +73,10 @@ public class TokenController {
 			&& !tokenInput.isEmpty()
 			&& tokenInput.get("token") != null) {
 				String token = (String) tokenInput.get("token");
-				String decrypt = CryptUtil.decrypt(token);
-				return decrypt;
+				String value = MAP_SHORTENED_TOKEN.get(token);
+				if (value != null) {
+					json = new JSONObject(CryptUtil.decrypt(value));
+				}
 			} else {
 				json.put("error", "empty token!");
 			}

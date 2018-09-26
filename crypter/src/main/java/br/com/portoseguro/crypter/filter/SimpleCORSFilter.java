@@ -1,4 +1,4 @@
-package br.com.portoseguro.crypter;
+package br.com.portoseguro.crypter.filter;
 
 import java.io.IOException;
 
