@@ -1,7 +1,7 @@
 package br.com.portoseguro.crypter.controller;
 
 import java.util.Date;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.json.JSONException;
@@ -22,7 +22,7 @@ import br.com.portoseguro.crypter.util.RandomString;
 
 public class ShortenerController {
 	
-	static Map<String, String> MAP_SHORTENED_TOKEN = new HashMap<String, String>();
+	static Map<String, String> MAP_SHORTENED_TOKEN = new LinkedHashMap<String, String>();
 	
 	@RequestMapping(
 		method=RequestMethod.POST, 
